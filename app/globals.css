@@ -587,14 +587,14 @@
     }
 
     .booking {
-      padding-bottom: 0;
+      padding: 78px 0;
     }
 
     .booking-panel {
       display: grid;
       grid-template-columns: minmax(0, 0.88fr) minmax(320px, 1fr);
       gap: 34px;
-      border-radius: 8px 8px 0 0;
+      border-radius: 8px;
       padding: 34px;
       background: var(--ink);
       color: #fff;
@@ -789,6 +789,6 @@
       }
 
       .booking-panel {
-        padding: 22px 14px 0;
+        padding: 22px 14px;
       }
     }

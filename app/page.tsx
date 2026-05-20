@@ -154,6 +154,78 @@ export default function Home() {
       </header>
 
       <main>
+        <section className="booking" id="booking">
+          <div className="container">
+            <div className="booking-panel">
+              <div>
+                <div className="section-kicker">BOOK A VISIT</div>
+                <h2>给它约一次舒服的洗护</h2>
+                <p>
+                  留下信息后，门店会按预约顺序确认档期。急单请直接电话联系，我们会优先看今天还能不能安排。
+                </p>
+                <div className="contact-list">
+                  <div className="contact-item">
+                    <strong>电话</strong>138-0000-8899
+                  </div>
+                  <div className="contact-item">
+                    <strong>微信</strong>PaopaoPaws
+                  </div>
+                  <div className="contact-item">
+                    <strong>地址</strong>上海市宜川路街道陕西北路1620号
+                  </div>
+                  <div className="contact-item">
+                    <strong>停车</strong>门口临停 15 分钟，附近有社区停车场。
+                  </div>
+                </div>
+              </div>
+
+              <form onSubmit={handleSubmit}>
+                <label>
+                  联系人
+                  <input type="text" name="name" placeholder="例如：王女士" required />
+                </label>
+                <label>
+                  联系电话
+                  <input type="tel" name="phone" placeholder="请输入手机号" required />
+                </label>
+                <label>
+                  宠物类型
+                  <select name="pet" defaultValue="小型犬">
+                    <option>小型犬</option>
+                    <option>中大型犬</option>
+                    <option>猫咪</option>
+                    <option>其他宠物</option>
+                  </select>
+                </label>
+                <label>
+                  想预约的服务
+                  <select name="service" defaultValue="基础洗护">
+                    <option>基础洗护</option>
+                    <option>洗护加造型</option>
+                    <option>猫咪低压力护理</option>
+                    <option>皮毛养护</option>
+                  </select>
+                </label>
+                <label>
+                  期望到店时间
+                  <input type="datetime-local" name="arrivalTime" required />
+                </label>
+                <label>
+                  备注
+                  <textarea
+                    name="note"
+                    placeholder="可以写宠物年龄、体重、是否怕生或皮肤敏感"
+                  />
+                </label>
+                <button type="submit">提交预约信息</button>
+                <p className="form-note" aria-live="polite">
+                  {formNote}
+                </p>
+              </form>
+            </div>
+          </div>
+        </section>
+
         <section className="hero" id="home">
           <div className="hero-inner">
             <div>
@@ -356,78 +428,6 @@ export default function Home() {
                   </div>
                 </article>
               ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="booking" id="booking">
-          <div className="container">
-            <div className="booking-panel">
-              <div>
-                <div className="section-kicker">BOOK A VISIT</div>
-                <h2>给它约一次舒服的洗护</h2>
-                <p>
-                  留下信息后，门店会按预约顺序确认档期。急单请直接电话联系，我们会优先看今天还能不能安排。
-                </p>
-                <div className="contact-list">
-                  <div className="contact-item">
-                    <strong>电话</strong>138-0000-8899
-                  </div>
-                  <div className="contact-item">
-                    <strong>微信</strong>PaopaoPaws
-                  </div>
-                  <div className="contact-item">
-                    <strong>地址</strong>上海市宜川路街道陕西北路1620号
-                  </div>
-                  <div className="contact-item">
-                    <strong>停车</strong>门口临停 15 分钟，附近有社区停车场。
-                  </div>
-                </div>
-              </div>
-
-              <form onSubmit={handleSubmit}>
-                <label>
-                  主人称呼
-                  <input type="text" name="name" placeholder="例如：王女士" required />
-                </label>
-                <label>
-                  联系电话
-                  <input type="tel" name="phone" placeholder="请输入手机号" required />
-                </label>
-                <label>
-                  宠物类型
-                  <select name="pet" defaultValue="小型犬">
-                    <option>小型犬</option>
-                    <option>中大型犬</option>
-                    <option>猫咪</option>
-                    <option>其他宠物</option>
-                  </select>
-                </label>
-                <label>
-                  想预约的服务
-                  <select name="service" defaultValue="基础洗护">
-                    <option>基础洗护</option>
-                    <option>洗护加造型</option>
-                    <option>猫咪低压力护理</option>
-                    <option>皮毛养护</option>
-                  </select>
-                </label>
-                <label>
-                  期望到店时间
-                  <input type="datetime-local" name="arrivalTime" required />
-                </label>
-                <label>
-                  备注
-                  <textarea
-                    name="note"
-                    placeholder="可以写宠物年龄、体重、是否怕生或皮肤敏感"
-                  />
-                </label>
-                <button type="submit">提交预约信息</button>
-                <p className="form-note" aria-live="polite">
-                  {formNote}
-                </p>
-              </form>
             </div>
           </div>
         </section>
