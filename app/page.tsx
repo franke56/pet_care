@@ -413,6 +413,10 @@ export default function Home() {
                   </select>
                 </label>
                 <label>
+                  期望到店时间
+                  <input type="datetime-local" name="arrivalTime" required />
+                </label>
+                <label>
                   备注
                   <textarea
                     name="note"
