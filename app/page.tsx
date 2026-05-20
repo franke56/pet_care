@@ -119,6 +119,13 @@ function StoreInfoCard() {
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [formNote, setFormNote] = useState("");
+  const defaultArrivalTime = (() => {
+    const nextMorning = new Date();
+    nextMorning.setDate(nextMorning.getDate() + 1);
+    nextMorning.setHours(9, 30, 0, 0);
+    const timezoneOffset = nextMorning.getTimezoneOffset() * 60 * 1000;
+    return new Date(nextMorning.getTime() - timezoneOffset).toISOString().slice(0, 16);
+  })();
 
   const showSlide = (index: number) => {
     setActiveSlide((index + environmentSlides.length) % environmentSlides.length);
@@ -208,7 +215,12 @@ export default function Home() {
                 </label>
                 <label>
                   期望到店时间
-                  <input type="datetime-local" name="arrivalTime" required />
+                  <input
+                    type="datetime-local"
+                    name="arrivalTime"
+                    defaultValue={defaultArrivalTime}
+                    required
+                  />
                 </label>
                 <label>
                   备注
